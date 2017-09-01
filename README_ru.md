@@ -14,17 +14,16 @@
 
 ## Введение
 
-Software engineering principles, from Robert C. Martin's book
-[*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
-adapted for PHP. This is not a style guide. It's a guide to producing
-readable, reusable, and refactorable software in PHP.
+Принципы построения программ, описанные в книге Робина Мартина 
+[*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882), 
+были адаптированны для PHP. Это не является руководством по стилю кодирования. Это руководство
+по созданию читаемого, переиспользуемого и поддающегося рефакторингу PHP-кода.
 
-Not every principle herein has to be strictly followed, and even fewer will be universally 
-agreed upon. These are guidelines and nothing more, but they are ones codified over many 
-years of collective experience by the authors of *Clean Code*.
+Не каждый принцип должен строго соблюдаться, с некоторыми, возможно, вы будете не согласны.
+Это всего лишь рекомендации и ничего более, но они являются результатом многолетних практик авторов *Чистого кода*.
 
-Inspired from [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript)
-Перевод на русский [clean-code-php](https://github.com/jupeter/clean-code-php)
+Вдохновлено [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript)
+Исходный английский текст [clean-code-php](https://github.com/jupeter/clean-code-php)
 
 ## **Переменные**
 ### Use meaningful and pronounceable variable names
