@@ -1,8 +1,8 @@
 # clean-code-php
 
 ## Оглавление
-  1. [Введение](#введение)
-  2. [Переменные](#переменные)
+  1. [Введение](#Введение)
+  2. [Переменные](#Переменные)
   3. [Функции](#functions)
   4. [Объекты и структуры данных](#objects-and-data-structures)
   5. [Классы](#classes)
@@ -59,7 +59,6 @@ getUser();
 читабелен и удобен для поиска по нему. Не дав переменным имена, несущие смысловую нагрузку 
 для понимания нашей программы, мы делаем чтение кода сложнее. 
  
-
 **Плохо:**
 ```php
 // Какого лешего тут делает 86400?
@@ -105,7 +104,7 @@ saveCityZipCode($city, $zipCode);
 
 **Хорошо**:
 
-Уменьшим зависимость от решулярного выражения, использовав подшаблоны.
+Уменьшим зависимость от регулярного выражения, использовав подшаблоны.
 ```php
 $address = 'One Infinite Loop, Cupertino 95014';
 $cityZipCodeRegex = '/^[^,\\]+[,\\\s]+(?<city>.+?)\s*(?<zipCode>\d{5})?$/';
@@ -115,9 +114,10 @@ saveCityZipCode($matches['city'], $matches['zipCode']);
 ```
 **[⬆ наверх](#Оглавление)**
 
-### Avoid Mental Mapping
-Don’t force the reader of your code to translate what the variable means.
-Explicit is better than implicit.
+### Избегайте умственного сопоставления
+
+Не заставляйте читателя вашего кода догадываться, что означает ваша переменная.
+Явное всегда лучше, чем неявное.
 
 **Плохо:**
 ```php
@@ -130,12 +130,12 @@ for ($i = 0; $i < count($l); $i++) {
     // ...
     // ...
     // ...
-    // Wait, what is `$li` for again?
+    // Что, опять `$li`?
     dispatch($li);
 }
 ```
 
-**Good**:
+**Хорошо**:
 ```php
 $locations = ['Austin', 'New York', 'San Francisco'];
 
@@ -148,7 +148,7 @@ foreach ($locations as $location) {
     dispatch($location);
 });
 ```
-**[⬆ наверх](#table-of-contents)**
+**[⬆ наверх](#Оглавление)**
 
 
 ### Don't add unneeded context
