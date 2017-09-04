@@ -1,8 +1,8 @@
 # clean-code-php
 
 ## Оглавление
-  1. [Введение](#introduction)
-  2. [Переменные](#variables)
+  1. [Введение](#введение)
+  2. [Переменные](#переменные)
   3. [Функции](#functions)
   4. [Объекты и структуры данных](#objects-and-data-structures)
   5. [Классы](#classes)
@@ -22,11 +22,11 @@
 Не каждый принцип должен строго соблюдаться, с некоторыми, возможно, вы будете не согласны.
 Это всего лишь рекомендации и ничего более, но они являются результатом многолетних практик авторов *Чистого кода*.
 
-Вдохновлено [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript)
+Вдохновлено [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript).
 Исходный английский текст [clean-code-php](https://github.com/jupeter/clean-code-php)
 
 ## **Переменные**
-### Use meaningful and pronounceable variable names
+### Используйте понятные и произнос Use meaningful and pronounceable variable names
 
 **Плохо:**
 ```php
@@ -37,9 +37,9 @@ $ymdstr = $moment->format('y-m-d');
 ```php
 $currentDate = $moment->format('y-m-d');
 ```
-**[⬆ наверх](#table-of-contents)**
+**[⬆ наверх](#Оглавление)**
 
-### Use the same vocabulary for the same type of variable
+### Используйте одинаковые названия для схожих типов данных
 
 **Плохо:**
 ```php
@@ -48,38 +48,39 @@ getClientData();
 getCustomerRecord();
 ```
 
-**Good**:
+**Хорошо**:
 ```php
 getUser();
 ```
-**[⬆ наверх](#table-of-contents)**
+**[⬆ наверх](#Оглавление)**
 
-### Use searchable names
-We will read more code than we will ever write. It's important that the code we do write is 
-readable and searchable. By *not* naming variables that end up being meaningful for 
-understanding our program, we hurt our readers.
-Make your names searchable.
+### Делайте имена доступными для поиска
+Мы чаще будем читать, нежели писать код. Поэтому очень важно чтобы код, ктоторый мы пишем, был 
+читабелен и удобен для поиска по нему. Не дав переменным имена, несущие смысловую нагрузку 
+для понимания нашей программы, мы делаем чтение кода сложнее. 
+ 
 
 **Плохо:**
 ```php
-// What the heck is 86400 for?
+// Какого лешего тут делает 86400?
 addExpireAt(86400);
 
 ```
 
-**Good**:
+**Хорошо**:
 ```php
-// Declare them as capitalized `const` globals.
+// Определим константу "количество секунд в одном дне".
 interface DateGlobal {
     const SECONDS_IN_A_DAY = 86400;
 }
 
 addExpireAt(DateGlobal::SECONDS_IN_A_DAY);
 ```
-**[⬆ наверх](#table-of-contents)**
+**[⬆ наверх](#Оглавление)**
 
 
-### Use explanatory variables
+### Используйте поясняющие переменные
+
 **Плохо:**
 ```php
 $address = 'One Infinite Loop, Cupertino 95014';
@@ -91,7 +92,7 @@ saveCityZipCode($matches[1], $matches[2]);
 
 **Неплохо**:
 
-It's better, but we are still heavily dependent on regex.
+Не плохо, но мы все еще сильно зависимы от регулярного выражения.
 
 ```php
 $address = 'One Infinite Loop, Cupertino 95014';
@@ -102,9 +103,9 @@ list(, $city, $zipCode) = $matchers;
 saveCityZipCode($city, $zipCode);
 ```
 
-**Good**:
+**Хорошо**:
 
-Decrease dependence on regex by naming subpatterns.
+Уменьшим зависимость от решулярного выражения, использовав подшаблоны.
 ```php
 $address = 'One Infinite Loop, Cupertino 95014';
 $cityZipCodeRegex = '/^[^,\\]+[,\\\s]+(?<city>.+?)\s*(?<zipCode>\d{5})?$/';
@@ -112,7 +113,7 @@ preg_match($cityZipCodeRegex, $address, $matches);
 
 saveCityZipCode($matches['city'], $matches['zipCode']);
 ```
-**[⬆ наверх](#table-of-contents)**
+**[⬆ наверх](#Оглавление)**
 
 ### Avoid Mental Mapping
 Don’t force the reader of your code to translate what the variable means.
