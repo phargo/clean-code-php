@@ -3,7 +3,7 @@
 ## Оглавление
   1. [Введение](#Введение)
   2. [Переменные](#Переменные)
-  3. [Функции](#functions)
+  3. [Функции](#Функции)
   4. [Объекты и структуры данных](#objects-and-data-structures)
   5. [Классы](#classes)
      1. [S: Single Responsibility Principle (SRP)](#single-responsibility-principle-srp)
@@ -183,7 +183,7 @@ class Car
 
 **[⬆ наверх](#Оглавление)**
 
-### Use default arguments instead of short circuiting or conditionals
+### Используйте аргументы по умолчанию вместо использования условий
 
 **Плохо:**
 ```php
@@ -194,15 +194,17 @@ function createMicrobrewery($name = null) {
 
 ```
 
-**Good**:
+**Хорошо**:
 ```php
 function createMicrobrewery($breweryName = 'Hipster Brew Co.') {
     // ...
 }
 
 ```
-**[⬆ наверх](#table-of-contents)**
-## **Functions**
+**[⬆ наверх](#Оглавление)**
+
+## **Функции**
+
 ### Function arguments (2 or fewer ideally)
 Limiting the amount of function parameters is incredibly important because it makes 
 testing your function easier. Having more than three leads to a combinatorial explosion 
