@@ -183,7 +183,7 @@ class Car
 
 **[⬆ наверх](#Оглавление)**
 
-### Используйте аргументы по умолчанию вместо использования условий
+### Используйте аргументы по умолчанию вместо условий
 
 **Плохо:**
 ```php
@@ -205,15 +205,17 @@ function createMicrobrewery($breweryName = 'Hipster Brew Co.') {
 
 ## **Функции**
 
-### Function arguments (2 or fewer ideally)
-Limiting the amount of function parameters is incredibly important because it makes 
-testing your function easier. Having more than three leads to a combinatorial explosion 
-where you have to test tons of different cases with each separate argument.
+### Аршументы функции (два или меньше - идеально)
 
-Zero arguments is the ideal case. One or two arguments is ok, and three should be avoided. 
-Anything more than that should be consolidated. Usually, if you have more than two 
-arguments then your function is trying to do too much. In cases where it's not, most 
-of the time a higher-level object will suffice as an argument.
+Ограничение числа параметров функции невероятно важный момент, 
+потому что это делает тестирование вашей функции очень простым. Наличие трех и более аргументов 
+приводит к [комбинаторному взрыву](https://ru.wikipedia.org/wiki/Комбинаторный_взрыв), когда вам 
+приходится поверять множество различных комбинаций с каждым из аргументов.
+
+Функция без аргументов - идеальный случай. Один или два аршумента - тоже нормально, 
+а три - уже стоит избегать. Все что нужно, должно быть объединено. Как правило, если у вас 
+больше двух аршументов, ваша функция пытается сделать слишком много. В случае, если это не так,
+в большинстве случаев будет достаточно передачи объекта в качестве аргумента.
 
 **Плохо:**
 ```php
@@ -222,7 +224,7 @@ function createMenu($title, $body, $buttonText, $cancellable) {
 }
 ```
 
-**Good**:
+**Хороша**:
 ```php
 class MenuConfig
 {
@@ -243,7 +245,7 @@ function createMenu(MenuConfig $config) {
 }
 
 ```
-**[⬆ наверх](#table-of-contents)**
+**[⬆ наверх](#Оглавление)**
 
 
 ### Functions should do one thing
