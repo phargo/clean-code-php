@@ -151,10 +151,9 @@ foreach ($locations as $location) {
 **[⬆ наверх](#Оглавление)**
 
 
-### Don't add unneeded context
+### Не добавляйте лишний контекст
 
-If your class/object name tells you something, don't repeat that in your
-variable name.
+Если имя вашего класса/объекта несет определенный смысл, не повторяйте это в названии вашей переменной.
 
 **Плохо:**
 
@@ -169,7 +168,7 @@ class Car
 }
 ```
 
-**Good**:
+**Хорошо**:
 
 ```php
 class Car
@@ -182,7 +181,7 @@ class Car
 }
 ```
 
-**[⬆ наверх](#table-of-contents)**
+**[⬆ наверх](#Оглавление)**
 
 ### Use default arguments instead of short circuiting or conditionals
 
